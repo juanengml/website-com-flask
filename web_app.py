@@ -29,3 +29,6 @@ def portifolio():
 def busca():
    if request.method == "POST":
            return request.form['busca']
+           
+if __name__ == "__main__":
+    app.run(host="0.0.0.0",port=80,debug=True)
