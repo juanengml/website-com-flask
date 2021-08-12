@@ -2,12 +2,28 @@
 # A very simple Flask Hello World app for you to get started with...
 
 from flask import Flask, render_template, request
+import os
+
+# Set environment variables
+db = os.getenv('DATABASE')
 
 app = Flask(__name__)
 
 @app.route('/',methods=["GET","POST"])
 def index():
     return render_template("index.html")
+
+@app.route('/database',methods=["GET","POST"])
+def index():
+    html = """
+     <center>
+     <h1>url database</h1>
+     <br> 
+     <h2>{}</h2>
+     </center>
+     """.format(db)
+    return html
+
 
 @app.route('/about')
 def about():
