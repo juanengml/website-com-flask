@@ -14,7 +14,7 @@ def index():
     return render_template("index.html")
 
 @app.route('/database',methods=["GET","POST"])
-def index():
+def database():
     html = """
      <center>
      <h1>url database</h1>
